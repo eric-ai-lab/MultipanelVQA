@@ -13,8 +13,9 @@ Multipanel images, commonly seen as web screenshots, posters, etc., pervade our 
 # Data
 MultipanelVQA includes both real-world subset and synthetic subset.
 
-You may view/download them at: [real-world subset](https://huggingface.co/datasets/yfan1997/MultipanelVQA_real-world) and [synthetic subset](https://huggingface.co/datasets/yfan1997/MultipanelVQA_synthetic).
+You may view them at: [real-world subset](https://huggingface.co/datasets/yfan1997/MultipanelVQA_real-world) and [synthetic subset](https://huggingface.co/datasets/yfan1997/MultipanelVQA_synthetic).
 
+Download:
 ``` bash
 # Make sure you have git-lfs installed (https://git-lfs.com)
 git lfs install
