@@ -15,7 +15,40 @@ MultipanelVQA includes both real-world subset and synthetic subset.
 
 You may view/download them at: [real-world subset](https://huggingface.co/datasets/yfan1997/MultipanelVQA_real-world) and [synthetic subset](https://huggingface.co/datasets/yfan1997/MultipanelVQA_synthetic).
 
-Todos:
+# Evaluate Models on MultipanelVQA
 
- - [ ] Release code for evaluation
- - [ ] Release code for generating synthetic subset.
+This section provides instructions for evaluating open-sourced models on our MultipanelVQA benchmark. The evaluation consists of three main steps, designed to integrate seamlessly with your existing workflow.
+
+
+### Step 1: Preparing the Model Loader
+
+1. Navigate to `./inference/models` and create a Python file named `load_MODEL.py`, where `MODEL` is the name of the model you're evaluating.
+2. In this file, load your model and define a function `call_model(image_file, prompt)` that will return a prediction for the given image and prompt.
+
+   ```python
+   # Load your model here
+   model.init() # example
+   # Model loading ends
+
+   def call_model(image_file, prompt):
+       # Your model prediction logic here
+       return prediction
+    ```
+### Step 2: Configuring the Inference Script
+Open `./inference/inference.py.`
+
+Replace line 1 with an import to your call_model function at :
+
+```python
+from models.load_MODEL import *
+```
+
+Adjust lines 10-13 to specify the directory of your benchmark files, ensuring the path is correctly set to where your dataset resides.
+
+### Step 3: Running the Evaluation
+With your model loader prepared and inference script configured, use the command below to run the evaluation:
+
+```bash
+python ./inference/inference.py
+```
+
