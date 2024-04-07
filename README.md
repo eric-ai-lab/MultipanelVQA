@@ -15,6 +15,16 @@ MultipanelVQA includes both real-world subset and synthetic subset.
 
 You may view/download them at: [real-world subset](https://huggingface.co/datasets/yfan1997/MultipanelVQA_real-world) and [synthetic subset](https://huggingface.co/datasets/yfan1997/MultipanelVQA_synthetic).
 
+``` bash
+# Make sure you have git-lfs installed (https://git-lfs.com)
+git lfs install
+
+git clone https://huggingface.co/datasets/yfan1997/MultipanelVQA_synthetic
+
+git clone https://huggingface.co/datasets/yfan1997/MultipanelVQA_real-world
+
+```
+
 # Evaluate Models on MultipanelVQA
 
 This section provides instructions for evaluating open-sourced models on our MultipanelVQA benchmark. The evaluation consists of three main steps, designed to integrate seamlessly with your existing workflow.
@@ -22,7 +32,8 @@ This section provides instructions for evaluating open-sourced models on our Mul
 
 ### Step 1: Preparing the Model Loader
 
-1. Navigate to `./inference/models` and create a Python file named `load_MODEL.py`, where `MODEL` is the name of the model you're evaluating.
+1. Navigate to `./inference/models` and create a Python file named `load_MODEL.py`, where `MODEL` is the name of the model you're evaluating. In the same directory, we provided example scripts of how we load the models that are evaluated in the paper.
+
 2. In this file, load your model and define a function `call_model(image_file, prompt)` that will return a prediction for the given image and prompt.
 
    ```python
@@ -46,9 +57,9 @@ from models.load_MODEL import *
 Adjust lines 10-13 to specify the directory of your benchmark files, ensuring the path is correctly set to where your dataset resides.
 
 ### Step 3: Running the Evaluation
-With your model loader prepared and inference script configured, use the command below to run the evaluation:
+With your model loader prepared and inference script configured, use the command below to run the evaluation. Note that the evaluation requires GPT-4 to serve a secondary judge as detailed in the paper. Our code calls Azure ChatGPT api (`inference/utils/get_gpt4.py`), which requires API_BASE and API_KEY.
 
 ```bash
-python ./inference/inference.py
+API_BASE=xxx API_KEY=xxx python ./inference/inference.py
 ```
 
