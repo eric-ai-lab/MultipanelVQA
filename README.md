@@ -64,3 +64,5 @@ With your model loader prepared and inference script configured, use the command
 API_BASE=xxx API_KEY=xxx python ./inference/inference.py
 ```
 
+# Generate synthetic multipanel images
+
