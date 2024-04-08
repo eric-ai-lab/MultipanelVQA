@@ -4,7 +4,7 @@ Yue Fan†, Jing Gu†, Kaiwen Zhou†, Qianqi Yan†, Shan Jiang‡, Ching-Chen
 
 †Univeristion of California, Santa Cruz, ‡eBay Inc.
 
-<a href='https://arxiv.org/abs/2401.15847'><img src='https://img.shields.io/badge/Paper-Arxiv-red'></a> <a href='https://sites.google.com/view/multipanelvqa/home'><img src='https://img.shields.io/badge/Project-Page-green'></a>
+<a href='https://arxiv.org/abs/2401.15847'><img src='https://img.shields.io/badge/Paper-Arxiv-red'></a> <a href='https://sites.google.com/view/multipanelvqa/home'><img src='https://img.shields.io/badge/Project-Page-green'></a> 
 
 ![teaser](teaser.png)
 
@@ -64,5 +64,18 @@ With your model loader prepared and inference script configured, use the command
 API_BASE=xxx API_KEY=xxx python ./inference/inference.py
 ```
 
-# Generate synthetic multipanel images
+# Generate Synthetic Multipanel Images
 
+In this part of the project, we detail how we generate synthetic multipanel images. We've broken down the process into two main steps, each covered by a separate Jupyter notebook in the `./synthetic_data_generation` folder.
+
+### Step 1: Layout Generation
+
+The first step involves generating various layouts for the multipanel images. `layout_generation_pipeline.ipynb` notebook outlines the pipeline used to create layouts in two styles: grid style and splash style, with 2-8 subfigures.
+
+### Step 2: Filling Subfigures into Layouts
+
+Once you have your layouts ready, the next step is to fill these layouts with actual images. For this purpose, we provide the `fill_subfigures_into_layouts.ipynb` notebook in the same directory. This notebook contains the code needed to take images from a source dataset (e.g., VQAv2) and place them into the generated layouts to create the final multipanel images.
+
+#### Demo Mode
+
+To make it easier for users to explore and understand this step, we've also included a demo mode in `fill_subfigures_into_layouts.ipynb`, allowing users to test run the process of filling layouts with subfigures without any previous preparation. Try it on Google Colabe here <a href='https://colab.research.google.com/drive/1kun-ba88jTuLPj4zcLNR26K7ft7M3TdO?usp=sharing'><img src='https://img.shields.io/badge/Open%20in-Colab-F9AB00?logo=Google-Colab&logoColor=white'></a>.
