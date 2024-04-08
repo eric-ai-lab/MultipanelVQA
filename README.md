@@ -79,3 +79,14 @@ Once you have your layouts ready, the next step is to fill these layouts with ac
 #### Demo Mode
 
 To make it easier for users to explore and understand this step, we've also included a demo mode in `fill_subfigures_into_layouts.ipynb`, allowing users to test run the process of filling layouts with subfigures without any previous preparation. Try it on Google Colabe here <a href='https://colab.research.google.com/drive/1kun-ba88jTuLPj4zcLNR26K7ft7M3TdO?usp=sharing'><img src='https://img.shields.io/badge/Open%20in-Colab-F9AB00?logo=Google-Colab&logoColor=white'></a>.
+
+
+## If you find this useful, please cite our work
+```
+@article{fan2024muffin,
+  title={Muffin or Chihuahua? Challenging Large Vision-Language Models with Multipanel VQA},
+  author={Fan, Yue and Gu, Jing and Zhou, Kaiwen and Yan, Qianqi and Jiang, Shan and Kuo, Ching-Chen and Guan, Xinze and Wang, Xin Eric},
+  journal={arXiv preprint arXiv:2401.15847},
+  year={2024}
+}
+```
